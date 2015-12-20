@@ -68,7 +68,19 @@ gulp.task('default', function () {
 <h1>Hello Thomas</h1>
 ```
 
+And youn can use with [gulp-changed](https://github.com/sindresorhus/gulp-changed)
 
+```js
+gulp.task('default', function () {
+    gulp.src(PATHS.ax5core.doc_src + '/**/*.html')
+        .pipe(changed(PATHS.ax5core.doc_dest))
+        .pipe(marko_ax5({
+            projectName: "ax5core",
+            layoutPath: PATHS.assets.src + '/_layouts/index.marko'
+        }))
+        .pipe(gulp.dest(PATHS.ax5core.doc_dest));
+});
+```
 
 
 ## API
@@ -97,7 +109,7 @@ Type: `Object`
 
 Type: `Object`
 
-It will ignore the folder structure. It treats it as if it is located the file just below the "srcroot".
+It will ignore the folder structure. It treats it as if it is located the file just below the "src_root".
 
 ##### extension
 
