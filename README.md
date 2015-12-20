@@ -68,7 +68,7 @@ gulp.task('default', function () {
 <h1>Hello Thomas</h1>
 ```
 
-And youn can use with [gulp-changed](https://github.com/sindresorhus/gulp-changed)
+And you can use with [gulp-changed](https://github.com/sindresorhus/gulp-changed)
 
 ```js
 gulp.task('default', function () {
