@@ -42,10 +42,11 @@ function compile(options, data) {
 
 module.exports = function (data, options) {
 
+    if(typeof options === "undefined") options = {};
     options.options = extend(true, {
         writeToDisk: false,
-        preserveWhitespace: false
-    }, options.options);
+        preserveWhitespace: true
+    }, options.options||{});
 
     return compile(options, data);
 };
