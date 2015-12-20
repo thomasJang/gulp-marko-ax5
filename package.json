@@ -1,0 +1,40 @@
+{
+  "name": "gulp-marko-ax5",
+  "version": "0.1.0",
+  "description": "Render marko templates",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/thomasJang/gulp-marko-ax5"
+  },
+  "author": {
+    "name": "Thomas Jang",
+    "email": "tom@axisj.com",
+    "url": "axis.com"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "files": [
+    "index.js"
+  ],
+  "keywords": [
+    "gulpplugin",
+    "marko",
+    "template",
+    "compile",
+    "html",
+    "render",
+    "rendering",
+    "precompile"
+  ],
+  "dependencies": {
+    "gulp-util": "^3.0.0",
+    "marko": "^2.8.0",
+    "through2": "^2.0.0",
+    "node.extend": "^1.1.3"
+  },
+  "devDependencies": {
+    "gulp-data": "^1.0.2"
+  }
+}
