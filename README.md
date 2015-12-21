@@ -85,6 +85,10 @@ Hello Thomas!
 And you can use with [gulp-changed](https://github.com/sindresorhus/gulp-changed)
 
 ```js
+var gulp = require('gulp');
+var marko_ax5 = require('gulp-marko-ax5');
+var changed = require('gulp-changed');
+
 gulp.task('default', function () {
     gulp.src(PATHS.ax5core.doc_src + '/**/*.html')
         .pipe(changed(PATHS.ax5core.doc_dest))
