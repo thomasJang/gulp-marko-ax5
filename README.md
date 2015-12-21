@@ -18,7 +18,16 @@ npm install gulp-marko-ax5 --save-dev
 ### `src/greeting.html`
 
 ```erb
-<h1>Hello <%= name %></h1>
+Hello ${data.name}!
+
+<ul if="notEmpty(data.colors)">
+    <li style="color: $color" for="color in data.colors">
+        $color
+    </li>
+</ul>
+<div else>
+    No colors!
+</div>
 ```
 
 ### `gulpfile.js`
@@ -29,7 +38,7 @@ var marko_ax5 = require('gulp-marko-ax5');
 
 gulp.task('default', function () {
 	return gulp.src('/src/*.html')
-        .pipe(marko_ax5({ name: 'Thomas' }))
+        .pipe(marko_ax5({name: 'Thomas', colors: ["red", "green", "blue"]}))
         .pipe(gulp.dest('dist'));
 });
 ```
@@ -43,7 +52,7 @@ var marko_ax5 = require('gulp-marko-ax5');
 gulp.task('default', function () {
 	return gulp.src('src/*.html')
         .pipe(marko_ax5(
-            { name: 'Thomas' },
+            {name: 'Thomas', colors: ["red", "green", "blue"]},
             {
                 options: { // is marko compile option
                     preserveWhitespace: true, // default false
@@ -65,7 +74,12 @@ gulp.task('default', function () {
 ### `dist/greeting.html`
 
 ```html
-<h1>Hello Thomas</h1>
+Hello Thomas!
+<ul>
+    <li style="color: red">red</li>
+    <li style="color: green">green</li>
+    <li style="color: blue">blue</li>
+</ul>
 ```
 
 And you can use with [gulp-changed](https://github.com/sindresorhus/gulp-changed)
