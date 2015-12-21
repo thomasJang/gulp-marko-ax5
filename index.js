@@ -48,5 +48,7 @@ module.exports = function (data, options) {
         preserveWhitespace: true
     }, options.options||{});
 
+    require('marko/compiler').defaultOptions.preserveWhitespace = options.options.preserveWhitespace;
+
     return compile(options, data);
 };

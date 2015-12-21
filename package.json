@@ -1,6 +1,6 @@
 {
 	"name": "gulp-marko-ax5",
-	"version": "0.3.0",
+	"version": "0.3.1",
 	"description": "Render marko templates",
 	"license": "MIT",
 	"repository": {
