@@ -100,6 +100,26 @@ gulp.task('default', function () {
 });
 ```
 
+## Use the `tmpl-metadata tag attributes` value to` data.metadata`
+
+```html
+<tmpl-metadata
+    parentId="demo"
+    parentTitle="DEMO"
+    id="basic"
+    title="Picker"
+    desc=""
+></tmpl-metadata>
+
+<layout-use template="${data.layoutPath}">
+    <layout-put into="body">
+
+        페이지 테스트
+        ${data.metadata.parentTitle}
+    </layout-put>
+</layout-use>
+```
+
 
 ## API
 
@@ -143,3 +163,4 @@ If you use [grunt](http://gruntjs.com) instead of gulp, but want to perform a si
 ## License
 
 MIT © [Thomas Jang](https://axisj.com)
+
