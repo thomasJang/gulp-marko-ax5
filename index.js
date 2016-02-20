@@ -34,7 +34,10 @@ function compile(options, data) {
                 else return true;
             });
 
-            data.metadata = meta.attribs;
+            if(meta && meta.attribs) data.metadata = meta.attribs;
+            else{
+                data.metadata = {};
+            }
 
             var tmpl = marko.load(file.path, options.options), position;
             file.contents = new Buffer(tmpl.renderSync(data));
